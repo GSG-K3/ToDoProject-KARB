@@ -1,0 +1,23 @@
+{
+  "name": "todoproject-karb",
+  "version": "1.0.0",
+  "description": "this is the second project (Ruba, Abeed,Banan,Karmel)",
+  "main": "dom.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSG-K3/ToDoProject-KARB.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GSG-K3/ToDoProject-KARB/issues"
+  },
+  "homepage": "https://github.com/GSG-K3/ToDoProject-KARB#readme",
+  "dependencies": {
+    "tap-spec": "^5.0.0",
+    "tape": "^4.13.0"
+  }
+}
