@@ -7,9 +7,7 @@
   var addTodoForm = document.getElementById('add-todo');
 
   var state = [
-    { id: -3, description: 'first todo' },
-    { id: -2, description: 'second todo' },
-    { id: -1, description: 'third todo' },
+    
   ]; // this is our initial todoList
 
   // This function takes a todo, it returns the DOM node representing that todo
@@ -20,6 +18,9 @@
     // add span holding description
 
     // this adds the delete button
+    var newdiv=document.createElement('div');
+    newdiv.className = "buttonDiv";
+
     var text = todo.description;
     var spanElement = document.createElement("span");
     spanElement.appendChild(document.createTextNode(text));
@@ -31,6 +32,10 @@
       update(newState);
     })
     todoNode.appendChild(deleteButtonNode);
+    deleteButtonNode.className = "deleteButton";
+
+
+    newdiv.appendChild(deleteButtonNode);
     deleteButtonNode.appendChild(document.createTextNode("Delete"));
 
     // add markTodo button
@@ -42,8 +47,12 @@
      todoNode.classList.toggle("mark");
    });
    todoNode.appendChild(markTodobtn);
-   markTodobtn.appendChild(document.createTextNode("Mark"));
+   markTodobtn.className = "deleteButton";
 
+   newdiv.appendChild(markTodobtn);
+
+   markTodobtn.appendChild(document.createTextNode("Mark"));
+todoNode.appendChild(newdiv);
 
    
    // add classes for css
@@ -62,7 +71,9 @@
       var description = event.target.elements["description"].value;// event.target ....
       var newTask = { id: 0, description: description, done: false }
       var newState = todoFunctions.addTodo(state, newTask);// ?? change this!
+      let input = document.getElementById("task")
       update(newState);
+      input.value = "" 
     });
   }
 
