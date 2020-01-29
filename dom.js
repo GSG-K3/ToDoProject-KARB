@@ -29,7 +29,7 @@
     deleteButtonNode.addEventListener('click', function (event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
-    });
+    })
     todoNode.appendChild(deleteButtonNode);
     deleteButtonNode.appendChild(document.createTextNode("Delete"));
 
@@ -45,10 +45,8 @@
    markTodobtn.appendChild(document.createTextNode("Mark"));
 
 
-   if(todo.done == true){
-    todoNode.classList.add("mark")
-   }
-    // add classes for css
+   
+   // add classes for css
 
 
     return todoNode;

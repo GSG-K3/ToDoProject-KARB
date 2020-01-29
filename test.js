@@ -1,3 +1,4 @@
+
 var test = require('tape');
 var logic = require('./logic');
 let expect = [
@@ -6,6 +7,8 @@ let expect = [
         {id: 1, description: "abood", done: false} ]
     let expect2 = [ {id: 1, description: "abood", done: false} ,
         {id: 2, description: "banan", done: false} ]
+    let expect3= [
+          {id: 3, description: "abood", done: true} ]
 
 test('Refactor our add',function(t){
 t.deepEqual(logic.addTodo(), "undefined", " ")
@@ -17,16 +20,13 @@ t.deepEqual(logic.addTodo(expect1, {id: 1, description: "banan", done: false}),e
 t.end();
 })
 
-// test('Refactor our delete task',function(t){
-//   t.equal(logic.deleteTodo(),'delete first task','this is the first deleted task');
-// t.end();
-// })
+test('Refactor our add',function(t){
+  t.deepEqual(logic.markTodo(), "you should put arg", " unde");
+  t.deepEqual(logic.markTodo(expect, 1),[{id: 1, description: "abood", done: true} ],'changed false to true ');
+  t.deepEqual(logic.markTodo(expect3, 3),[{id: 3, description: "abood", done: false} ],'changed  true to false ');
+  t.end();
+  })
 
-// test('Refactor our mark',function(t){
-// t.equal(logic.markTodo(2),true,'mark task');
-
-// t.end();
-// })
 
   test('Refactor our add',function(t){
     t.deepEqual(logic.deleteTodo(expect2,2), expect1, " Delete");

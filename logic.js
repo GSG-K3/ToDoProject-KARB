@@ -30,9 +30,12 @@ var todoFunctions = {
     
     newTodo.id=this.generateId()
     var newState = this.cloneArrayOfObjects(todos);
-    
-    var dff  =newState.push(newTodo);
+    newState.push(newTodo);
     return  newState;
+     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
+      // returns a new array, it should contain todos with the newTodo added to the end.
+      // add an id to the newTodo. You can use the generateId function to create an id.
+      // hint: array.concat
     
 
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
@@ -80,8 +83,6 @@ var todoFunctions = {
     // hint: array.slice, array.sort
   },
 };
-
-
 // Why is this if statement necessary?
 // The answer has something to do with needing to run code both in the browser and in Node.js
 // See this article for more details: 
