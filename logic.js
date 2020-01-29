@@ -24,6 +24,13 @@ var todoFunctions = {
     },
     
     addTodo: function(todos, newTodo) {
+
+      newTodo.id=this.generateId()
+      var newState = this.cloneArrayOfObjects(todos);
+      
+      var dff  =newState.push(newTodo);
+      return  newState;
+
       // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
       // returns a new array, it should contain todos with the newTodo added to the end.
       // add an id to the newTodo. You can use the generateId function to create an id.
@@ -39,6 +46,13 @@ var todoFunctions = {
       // in the new todo array, all elements will remain unchanged except the one with id: idToMark
       // this element will have its done value toggled
       // hint: array.map
+      var newstate =this.cloneArrayOfObjects(todos);
+      newstate.forEach(element => {
+         if (element.done == false) element.done =true;
+      
+      });
+
+      return newstate;
     },
     sortTodos: function(todos, sortFunction) {
       // stretch goal! Do this last
