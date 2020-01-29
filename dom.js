@@ -20,6 +20,9 @@
     // add span holding description
 
     // this adds the delete button
+    var newdiv=document.createElement('div');
+    newdiv.className = "buttonDiv";
+
     var text = todo.description;
     var spanElement = document.createElement("span");
     spanElement.appendChild(document.createTextNode(text));
@@ -31,6 +34,10 @@
       update(newState);
     });
     todoNode.appendChild(deleteButtonNode);
+    deleteButtonNode.className = "deleteButton";
+
+
+    newdiv.appendChild(deleteButtonNode);
     deleteButtonNode.appendChild(document.createTextNode("Delete"));
 
     // add markTodo button
@@ -42,8 +49,12 @@
      todoNode.classList.add("mark");
    });
    todoNode.appendChild(markTodobtn);
-   markTodobtn.appendChild(document.createTextNode("Mark"));
+   markTodobtn.className = "deleteButton";
 
+   newdiv.appendChild(markTodobtn);
+
+   markTodobtn.appendChild(document.createTextNode("Mark"));
+todoNode.appendChild(newdiv);
 
    if(todo.done == true){
     todoNode.classList.add("mark")
