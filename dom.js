@@ -37,17 +37,10 @@
    var markTodobtn =document.createElement("button");
    markTodobtn.addEventListener('click', function(event){
      var newstate =todoFunctions.markTodo(state, todo.id);
-     // Add Color class      
-     update(newstate);
-    });
-    
-    if(todo.done == true){
-      todoNode.classList.add("mark")
-     }
-     else{
-      todoNode.classList.remove("mark")
-     }
-
+     state = newstate;
+     // Add Color class 
+     todoNode.classList.toggle("mark");
+   });
    todoNode.appendChild(markTodobtn);
    markTodobtn.appendChild(document.createTextNode("Mark"));
 

@@ -37,11 +37,24 @@ var todoFunctions = {
       // add an id to the newTodo. You can use the generateId function to create an id.
       // hint: array.concat
     
+
+    // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
+    // returns a new array, it should contain todos with the newTodo added to the end.
+    // add an id to the newTodo. You can use the generateId function to create an id.
+    // hint: array.concat
+  }, deleteTodo: function(todos, idToDelete) {
+    // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
+    // return a new array, this should not contain any todo with an id of idToDelete
+    // hint: array.filter
   },
     deleteTodo: function(todos, idToDelete) {
       // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
       // return a new array, this should not contain any todo with an id of idToDelete
       // hint: array.filter
+       var newstate =this.cloneArrayOfObjects(todos);
+       var newstate= newstate.filter(element => element.id !== idToDelete)
+      return newstate;
+
     },
     markTodo: function(todos, idToMark) {
       // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
@@ -53,15 +66,15 @@ var todoFunctions = {
       }
       var newstate =this.cloneArrayOfObjects(todos);
       newstate.forEach(element => {
-        
+
         if (element.id == idToMark) {
         if(element.done == false){
           element.done =true;
-        
+
         } else element.done = false;
       }
       });
-      return newstate;
+    return newstate;
   },
   sortTodos: function(todos, sortFunction) {
     // stretch goal! Do this last
