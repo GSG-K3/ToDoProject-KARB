@@ -32,8 +32,9 @@ var todoFunctions = {
     var newState = this.cloneArrayOfObjects(todos);
     newState.push(newTodo);
     return  newState;
+ 
+    
   },
-
     deleteTodo: function(todos, idToDelete) {
       // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
       // return a new array, this should not contain any todo with an id of idToDelete
@@ -47,8 +48,6 @@ var todoFunctions = {
       if(todos == undefined){
         return "you should put arg"
       }
-      
-    
       var newstate =this.cloneArrayOfObjects(todos);
       newstate.forEach(element => {
         
