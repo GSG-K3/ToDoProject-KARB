@@ -61,7 +61,8 @@
       // what does event.preventDefault do?
       // what is inside event.target?
       event.preventDefault();
-      var description = event.target.elements["description"].value;// event.target ....
+      var description = event.target.elements["description"].value;
+      // event.target ....
       var newTask = { id: 0, description: description, done: false }
       var newState = todoFunctions.addTodo(state, newTask);// ?? change this!
       update(newState);

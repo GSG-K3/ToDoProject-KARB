@@ -34,7 +34,6 @@ var todoFunctions = {
     var dff  =newState.push(newTodo);
     return  newState;
     
-
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // returns a new array, it should contain todos with the newTodo added to the end.
     // add an id to the newTodo. You can use the generateId function to create an id.
