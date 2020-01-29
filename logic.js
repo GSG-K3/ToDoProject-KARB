@@ -24,11 +24,11 @@ var todoFunctions = {
     },
     
     addTodo: function(todos, newTodo) {
+  
 
       newTodo.id=this.generateId()
       var newState = this.cloneArrayOfObjects(todos);
-      
-      var dff  =newState.push(newTodo);
+      newState.push(newTodo);
       return  newState;
 
       // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
@@ -46,10 +46,20 @@ var todoFunctions = {
       // in the new todo array, all elements will remain unchanged except the one with id: idToMark
       // this element will have its done value toggled
       // hint: array.map
+      if(todos == undefined){
+        return "you should put arg"
+      }
+      
+    
       var newstate =this.cloneArrayOfObjects(todos);
       newstate.forEach(element => {
-         if (element.done == false) element.done =true;
-      
+        
+        if (element.id == idToMark) {
+        if(element.done == false){
+          element.done =true;
+        
+        } else element.done = false;
+      }
       });
 
       return newstate;
