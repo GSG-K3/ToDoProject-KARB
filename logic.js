@@ -24,12 +24,16 @@ var todoFunctions = {
   },
   
   addTodo: function(todos, newTodo) {
-
+    if(todos == undefined  || todos == undefined )  return "undefined";
+    if(typeof(newTodo)!='object' )  return "the new todo must be object";
+    if(!Array.isArray(todos)) return "the new todo must be array";
+    
     newTodo.id=this.generateId()
     var newState = this.cloneArrayOfObjects(todos);
     
     var dff  =newState.push(newTodo);
     return  newState;
+    
 
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // returns a new array, it should contain todos with the newTodo added to the end.
