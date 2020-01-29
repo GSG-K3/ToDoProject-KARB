@@ -7,9 +7,7 @@
   var addTodoForm = document.getElementById('add-todo');
 
   var state = [
-    { id: -3, description: 'first todo' },
-    { id: -2, description: 'second todo' },
-    { id: -1, description: 'third todo' },
+    
   ]; // this is our initial todoList
 
   // This function takes a todo, it returns the DOM node representing that todo
@@ -32,7 +30,7 @@
     deleteButtonNode.addEventListener('click', function (event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
-    });
+    })
     todoNode.appendChild(deleteButtonNode);
     deleteButtonNode.className = "deleteButton";
 
@@ -46,7 +44,7 @@
      var newstate =todoFunctions.markTodo(state, todo.id);
      state = newstate;
      // Add Color class 
-     todoNode.classList.add("mark");
+     todoNode.classList.toggle("mark");
    });
    todoNode.appendChild(markTodobtn);
    markTodobtn.className = "deleteButton";
@@ -56,10 +54,8 @@
    markTodobtn.appendChild(document.createTextNode("Mark"));
 todoNode.appendChild(newdiv);
 
-   if(todo.done == true){
-    todoNode.classList.add("mark")
-   }
-    // add classes for css
+   
+   // add classes for css
 
 
     return todoNode;
@@ -75,7 +71,9 @@ todoNode.appendChild(newdiv);
       var description = event.target.elements["description"].value;// event.target ....
       var newTask = { id: 0, description: description, done: false }
       var newState = todoFunctions.addTodo(state, newTask);// ?? change this!
+      let input = document.getElementById("task")
       update(newState);
+      input.value = "" 
     });
   }
 

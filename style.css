@@ -80,7 +80,7 @@ ul{
 
 li{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     list-style-type: none;
     border: 1px solid #3e206d;
     margin: 9px 0 ;
@@ -115,7 +115,7 @@ button:active {
     } 
     
     .mark{
-        background-color: blue;
+        background-color: rgb(218, 151, 218);
     }
 
     @media screen and (max-width: 400px) {
