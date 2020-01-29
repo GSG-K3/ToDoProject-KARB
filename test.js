@@ -28,3 +28,7 @@ t.end();
 // t.end();
 // })
 
+  test('Refactor our add',function(t){
+    t.deepEqual(logic.deleteTodo(expect2,2), expect1, " Delete");
+     t.end();
+    })

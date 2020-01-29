@@ -39,7 +39,7 @@
      var newstate =todoFunctions.markTodo(state, todo.id);
      state = newstate;
      // Add Color class 
-     todoNode.classList.add("mark");
+     todoNode.classList.toggle("mark");
    });
    todoNode.appendChild(markTodobtn);
    markTodobtn.appendChild(document.createTextNode("Mark"));
