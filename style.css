@@ -109,7 +109,7 @@ button:active {
 
   
   label{
-      visibility: hidden;
+color: transparent;
       width: 5px;
       
     } 
