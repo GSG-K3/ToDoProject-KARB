@@ -33,7 +33,7 @@ input{
     border-radius: 5px;
     font-size: 2.5vh;
 }
-.buttonDiv{
+.button-container{
     display: flex;
     justify-content: end;
     align-items: flex-end;
@@ -52,7 +52,7 @@ button{
 
 }
 
-#add{
+.add-button{
     padding: 10px 15px;
     background-color:#700c70 ;
     box-shadow: 2px 2px 2px 2px #fff;
@@ -62,7 +62,7 @@ button{
     border: none;
     outline: none;
 }
-#add:active {
+.add-button:active {
     box-shadow: 0 0 #fff;
     transform: translateY(4px);
   }
@@ -98,7 +98,7 @@ li{
 span{
     font-size: 30px;
 }
-#todo-container{
+.todo-container{
     display: flex;
     justify-content: center;
 }

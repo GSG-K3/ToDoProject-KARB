@@ -18,8 +18,8 @@
     // add span holding description
 
     // this adds the delete button
-    var newdiv=document.createElement('div');
-    newdiv.className = "buttonDiv";
+    var buttonDiv=document.createElement('div');
+    buttonDiv.className = "button-container";
 
     var text = todo.description;
     var spanElement = document.createElement("span");
@@ -35,7 +35,7 @@
     deleteButtonNode.className = "deleteButton";
 
 
-    newdiv.appendChild(deleteButtonNode);
+    buttonDiv.appendChild(deleteButtonNode);
     deleteButtonNode.appendChild(document.createTextNode("Delete"));
 
     // add markTodo button
@@ -49,10 +49,10 @@
    todoNode.appendChild(markTodobtn);
    markTodobtn.className = "deleteButton";
 
-   newdiv.appendChild(markTodobtn);
+   buttonDiv.appendChild(markTodobtn);
 
    markTodobtn.appendChild(document.createTextNode("Mark"));
-todoNode.appendChild(newdiv);
+todoNode.appendChild(buttonDiv);
 
    
    // add classes for css
@@ -76,7 +76,6 @@ todoNode.appendChild(newdiv);
       input.value = "" 
     });
   }
-
   // you should not need to change this function
   var update = function (newState) {
     state = newState;
@@ -86,8 +85,8 @@ todoNode.appendChild(newdiv);
   // you do not need to change this function
   var renderState = function (state) {
     var todoListNode = document.createElement('ul');
-
-    state.forEach(function (todo) {
+    var storedstate = JSON.parse(localStorage.getItem("key"));
+    storedstate.forEach(function (todo) {
       todoListNode.appendChild(createTodoNode(todo));
     });
 
