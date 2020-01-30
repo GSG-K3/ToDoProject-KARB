@@ -24,13 +24,16 @@ var todoFunctions = {
   },
   
   addTodo: function(todos, newTodo) {
-    if(todos == undefined  || todos == undefined )  return "undefined";
+    if(todos === undefined  || newTodo === undefined )  return "undefined";
     if(typeof(newTodo)!='object' )  return "the new todo must be object";
     if(!Array.isArray(todos)) return "the new todo must be array";
-    
-    newTodo.id=this.generateId()
+        newTodo.id=this.generateId()
     var newState = this.cloneArrayOfObjects(todos);
     newState.push(newTodo);
+    localStorage.setItem("key", JSON.stringify(newState));
+
+
+
     return  newState;
      // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
       // returns a new array, it should contain todos with the newTodo added to the end.
@@ -42,19 +45,18 @@ var todoFunctions = {
     // returns a new array, it should contain todos with the newTodo added to the end.
     // add an id to the newTodo. You can use the generateId function to create an id.
     // hint: array.concat
-  }, deleteTodo: function(todos, idToDelete) {
-    // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
-    // return a new array, this should not contain any todo with an id of idToDelete
-    // hint: array.filter
-  },
+  }, 
     deleteTodo: function(todos, idToDelete) {
       // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
       // return a new array, this should not contain any todo with an id of idToDelete
       // hint: array.filter
+      
+
        var newstate =this.cloneArrayOfObjects(todos);
        var newstate= newstate.filter(element => element.id !== idToDelete)
-      return newstate;
-
+     
+      localStorage.setItem("key", JSON.stringify(newstate));
+ return newstate;
     },
     markTodo: function(todos, idToMark) {
       // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
@@ -62,7 +64,7 @@ var todoFunctions = {
       // this element will have its done value toggled
       // hint: array.map
       if(todos == undefined){
-        return "you should put arg"
+        return "undefined"
       }
       var newstate =this.cloneArrayOfObjects(todos);
       newstate.forEach(element => {
@@ -74,6 +76,9 @@ var todoFunctions = {
         } else element.done = false;
       }
       });
+
+      localStorage.setItem("key", JSON.stringify(newstate));
+
     return newstate;
   },
   sortTodos: function(todos, sortFunction) {
