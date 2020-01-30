@@ -58,7 +58,7 @@ var todoFunctions = {
       // this element will have its done value toggled
       // hint: array.map
       if(todos == undefined){
-        return "you should put arg"
+        return "undefined"
       }
       var newstate =this.cloneArrayOfObjects(todos);
       newstate.forEach(element => {
